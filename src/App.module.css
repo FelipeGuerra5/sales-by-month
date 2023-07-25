@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu_user {
+  width: 30%;
+  display: flex;
+  justify-self: flex-start;
+  justify-content: space-around;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+}
+
+@keyframes logo-spin {}
+
+@media (prefers-reduced-motion: no-preference) {}
