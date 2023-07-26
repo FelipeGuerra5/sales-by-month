@@ -1,11 +1,23 @@
 import Styles from './App.module.css'
+import GraphView from './components/GraphView'
+import sumMonthlySales from './lib/sumMonthlySales'
 
 function App() {
+  const data = sumMonthlySales(
+    {
+      Category: "Dairy",
+      Product: "Milk and Derivatives",
+      Brand: "MooMilk Co."
+    }
+  )
+  
+  
   return (
     <main>
       <NavBar />
       <FilterSection />
       <GraphView />
+
     </main>
   )
 }
@@ -50,17 +62,5 @@ function FilterSection() {
     </section>
   )
 }
-
-function GraphView() {
-  return (
-    <div className={Styles.graph}>
-      Here will be the graph!
-    </div>
-  )
-}
-
-
-
-
 
 export default App

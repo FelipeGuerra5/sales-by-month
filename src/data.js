@@ -1,6 +1,0 @@
-const filtersData = {
-    {
-        option: 
-    }
-
-}
