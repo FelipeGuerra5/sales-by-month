@@ -1,46 +1,26 @@
-import data from './data.js';
+import data from './data.js'
 
+export default function getParamsForSelect(category, product, brand) {
+    console.log({ category, product, brand })
 
-export default function getParamsForSelect({ Category, Product, Brand }) {
-    const brand = [];
-    const product = [];
-    const category = [];
+    const brands = new Set()
+    const products = new Set()
+    const categories = new Set()
 
     data.forEach(item => {
-        if (!category.includes(item.Category) &&
-            Category != '' &&
-            item.Category == Category
-        ) {
-            category.push(item.Category);
-            product.push(item.Product)
-            brand.push(item.Brand)
+        categories.add(item.Category)
+        if (category && item.Category === category) {
+            products.add(item.Product)
         }
-        // if (!product.includes(item.Product) &&
-        //     Product != '' &&
-        //     item.Product == Product
-        // ) {
-        //     category.push(item.Category);
-        //     product.push(item.Product)
-        //     brand.push(item.Brand)
-        // }
-        // if (!brand.includes(item.Brand) &&
-        //     Brand != '' &&
-        //     item.Brand == Brand
-        // ) {
-        //     category.push(item.Category);
-        //     product.push(item.Product)
-        //     brand.push(item.Brand)
-        // }
-
-        console.log(category)
-        console.log(brand)
-        console.log(product)
-    });
+        if (product && item.Product == product) {
+            brands.add(item.Brand)
+        }
+    })
 
     return {
-        brand: brand,
-        product: product,
-        category: category,
-    };
+        brand: Array.from(brands),
+        product: Array.from(products),
+        category: Array.from(categories),
+    }
 }
 

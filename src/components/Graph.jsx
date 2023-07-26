@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React, { PureComponent } from 'react'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 
 const data = [
     {
@@ -44,7 +44,7 @@ const data = [
         pv: 4300,
         amt: 2100,
     },
-];
+]
 
 export default class GraphView extends PureComponent {
 
@@ -71,6 +71,6 @@ export default class GraphView extends PureComponent {
                     <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
                 </LineChart>
             </ResponsiveContainer>
-        );
+        )
     }
 }

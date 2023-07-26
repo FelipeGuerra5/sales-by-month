@@ -1,13 +1,13 @@
 import data from './data.js'
 
-export default function sumMonthlySales(Category, Product, Brand) {
+export default function sumMonthlySales(category, product, brand) {
 
     let months = []
     data.map((item) => {
         if (
-            item.Category == Category &&
-            item.Product == Product &&
-            item.Brand == Brand
+            item.Category == category &&
+            item.Product == product &&
+            item.Brand == brand
         ) {
             item.MonthlySales.map((element) => {
                 const month = element.month
@@ -18,6 +18,5 @@ export default function sumMonthlySales(Category, Product, Brand) {
         }
     })
     months.push({ month: "", sales: null })
-    console.log(months)
     return months
 }

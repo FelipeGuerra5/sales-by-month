@@ -1,25 +1,16 @@
-import React from 'react';
-import { LineChart, Line, ReferenceLine, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, Label, LabelList } from 'recharts';
+import React from 'react'
+import { LineChart, Line, ReferenceLine, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, Label, LabelList } from 'recharts'
 import Styles from '../App.module.css'
 
-const data = [
-    { month: "January", sales: 1200 },
-    { month: "February", sales: 1450 },
-    { month: "March", sales: 1100 },
-    { month: "April", sales: 1300 },
-    { month: "May", sales: 1120 },
-    { month: "June", sales: 1050 },
-    { month: "July", sales: 1300 },
-    { month: "August", sales: 1400 },
-    { month: "September", sales: 1150 },
-    { month: "October", sales: 1250 },
-    { month: "November", sales: 1100 },
-    { month: "December", sales: 1350 }
-]
-
-
 const LineGraph = ({ data }) => {
-    const yValuesForHorizontalLines = [400, 800, 1200, 1600, 2000]; // Add any Y-axis values for horizontal lines
+    const maxVal = data.reduce((max, { sales }) => sales > max ? sales : max, 0) * 1.1
+    const step = Math.round(maxVal / 5)
+    let acc = step
+    const yValuesForHorizontalLines = []
+    for (let i = 0; i < 5; i++) {
+        yValuesForHorizontalLines.push(acc)
+        acc += step
+    }
 
     return (
         <div>
@@ -40,7 +31,7 @@ const LineGraph = ({ data }) => {
                 </LineChart>
             </ResponsiveContainer>
         </div>
-    );
-};
+    )
+}
 
-export default LineGraph;
+export default LineGraph

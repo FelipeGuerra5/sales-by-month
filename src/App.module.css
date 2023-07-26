@@ -1,12 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  /* for dev */
-  /* border-width: 1px;
-  border-color: black;
-  border-style: dotted; */
 }
-
 
 body {
   height: 100%;
@@ -21,6 +16,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgb(47, 150, 224);
+  color: white;
 }
 
 .menu_user {
@@ -48,6 +45,7 @@ body {
   display: flex;
   justify-content: center;
   width: 70%;
+  font-weight: 500;
 }
 
 .filter_section {
