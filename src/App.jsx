@@ -38,16 +38,19 @@ function NavBar() {
   )
 }
 
-function DataFilter(params) {
-  // params.caegory.map(item => console.log(item))
+function DataFilter({ params, name }) {
 
   return (
     <div>
-      <label htmlFor="product">Product</label>
-      <select name="product" id="product">
-        <option value="prod1">prod1</option>
-        <option value="prod2">prod2</option>
-        <option value="prod3">prod3</option>
+      <label htmlFor="product">{name}</label>
+      <select name={name} id={name}>
+        {
+          params.map(item => {
+            return (
+              <option value={item} key={item}>{item.toUpperCase()}</option>
+            )
+          })
+        }
       </select>
     </div>
 
@@ -56,9 +59,12 @@ function DataFilter(params) {
 
 function FilterSection() {
   const options = getParamsForSelect()
+
   return (
     <section className={Styles.filter_section}>
-      <DataFilter params={options} />
+      <DataFilter params={options.category} name={'Category'} />
+      <DataFilter params={options.product} name={'Product'} />
+      <DataFilter params={options.brand} name={'Brand'} />
     </section>
   )
 }
