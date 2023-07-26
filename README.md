@@ -1,8 +1,9 @@
-# React + Vite
+# Sales by Month
+This Repository uses React.JS to render a front end where you can select between: Category, Product, Brand and it will return a graph with all the monthly sells on this specific selection.
+The Data, in the lib/data.js file was created using Open.Ai in order to save time making mock data.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Display on the Screen:
+![image](https://github.com/FelipeGuerra5/sales-by-month/assets/92859068/faf748b4-c45d-4070-8198-a1b1b2840c33)
 
-Currently, two official plugins are available:
+To visualize it use: [GitHub Pages](#todo)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
