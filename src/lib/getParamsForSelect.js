@@ -1,6 +1,5 @@
 import data from './data.js';
 
-console.log(data);
 
 export default function getParamsForSelect() {
     const brand = [];
@@ -8,14 +7,18 @@ export default function getParamsForSelect() {
     const category = [];
 
     data.forEach(item => {
-        if (!brand.includes(item.Brand)) {
-            brand.push(item.Brand);
-        }
-        if (!product.includes(item.Product)) {
-            product.push(item.Product)
-        }
         if (!category.includes(item.Category)) {
             category.push(item.Category);
+        }
+        if (
+            !product.includes(item.Product)
+        ) {
+            product.push(item.Product)
+        }
+        if (
+            !brand.includes(item.Brand)
+        ) {
+            brand.push(item.Brand);
         }
     });
 
@@ -26,4 +29,3 @@ export default function getParamsForSelect() {
     };
 }
 
-getParamsForSelect()
