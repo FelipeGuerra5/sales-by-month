@@ -17,7 +17,6 @@ function App() {
       <NavBar />
       <FilterSection />
       <GraphView data={data} />
-
     </main>
   )
 }
