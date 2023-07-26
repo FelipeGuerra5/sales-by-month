@@ -1,6 +1,7 @@
 import Styles from './App.module.css'
 import GraphView from './components/GraphView'
 import sumMonthlySales from './lib/sumMonthlySales'
+import getParamsForSelect from './lib/getParamsForSelect'
 
 function App() {
   const data = sumMonthlySales(
@@ -38,10 +39,12 @@ function NavBar() {
   )
 }
 
-function DataFilter() {
+function DataFilter(params) {
+  // params.caegory.map(item => console.log(item))
+
   return (
     <div>
-      <label htmlFor="product">Produto</label>
+      <label htmlFor="product">Product</label>
       <select name="product" id="product">
         <option value="prod1">prod1</option>
         <option value="prod2">prod2</option>
@@ -53,11 +56,10 @@ function DataFilter() {
 }
 
 function FilterSection() {
+  const options = getParamsForSelect()
   return (
     <section className={Styles.filter_section}>
-      <DataFilter />
-      <DataFilter />
-      <DataFilter />
+      <DataFilter params={options} />
     </section>
   )
 }
