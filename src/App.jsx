@@ -10,13 +10,12 @@ function App() {
       Brand: "MooMilk Co."
     }
   )
-  
-  
+
   return (
     <main>
       <NavBar />
       <FilterSection />
-      <GraphView />
+      <GraphView data={data} />
 
     </main>
   )
@@ -42,7 +41,7 @@ function NavBar() {
 function DataFilter() {
   return (
     <div>
-      <label for="product">Produto</label>
+      <label htmlFor="product">Produto</label>
       <select name="product" id="product">
         <option value="prod1">prod1</option>
         <option value="prod2">prod2</option>
